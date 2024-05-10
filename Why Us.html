@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Choose Us</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+  }
+
+  .header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+  }
+
+  .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .menu-toggle {
+    color: #fff;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 998;
+  }
+
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .menu li {
+    margin-bottom: 20px;
+  }
+
+  .menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #FF4500;
+  }
+
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .why-choose-us-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+  }
+
+  .why-choose-us-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .reasons-list {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+  }
+
+  .reasons-list li {
+    margin-bottom: 20px;
+    font-size: 18px;
+    position: relative;
+    padding-left: 40px;
+  }
+
+  .reasons-list li::before {
+    content: '\2713';
+    color: #FF4500;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    font-size: 14px;
+  }
+
+  footer p {
+    margin: 0;
+  }
+
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="logo">
+    <a href="intership.html">PORSCHE</a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle">&#8801; Menu</button>
+  <div class="menu-overlay" id="menu-overlay">
+    <ol class="menu" id="menu">
+      <li><a href="intership.html">Models</a></li>
+      <li><a href="Online bill payment.html">Online Bill Payment</a></li>
+      <li><a href="Why Us.html">Why Us</a></li>
+      <li><a href="Delivery Program.html">Delivery Programs</a></li>
+      <li><a href="Conctact & Support.html">Contact & Support</a></li>
+    </ol>
+    <span class="close-button" id="close-button">×</span>
+  </div>
+</header>
+<main>
+  <div class="why-choose-us-section">
+    <h2>Why Choose Us</h2>
+    <ul class="reasons-list">
+      <li>High-quality vehicles with advanced features</li>
+      <li>Exceptional customer service and support</li>
+      <li>Competitive pricing and financing options</li>
+      <li>Wide range of models to choose from</li>
+      <li>Trusted and reputable brand in the automotive industry</li>
+      <li>Continuous innovation and cutting-edge technology</li>
+      <li>Customization options for personalized experience</li>
+      <li>Reliable performance and durability</li>
+    </ul>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2024 Car Website. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+</footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var menuToggle = document.getElementById("menu-toggle");
+        var menuOverlay = document.getElementById("menu-overlay");
+        var closeButton = document.getElementById("close-button");
+
+        menuToggle.addEventListener("click", function () {
+            menuOverlay.style.display = "block";
+        });
+
+        closeButton.addEventListener("click", function () {
+            menuOverlay.style.display = "none";
+        });
+    });
+</script>
+</body>
+</html>

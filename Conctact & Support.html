@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Support</title>
+<style>
+  body {
+    font-family: 'Helvetica', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+
+  header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 999;
+  }
+
+  .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  .menu-toggle {
+    color: #fff;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 998;
+  }
+
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 50px auto;
+    text-align: center;
+  }
+
+  .menu li {
+    margin-bottom: 20px;
+  }
+
+  .menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #FF4500; 
+  }
+
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .contact-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+  }
+
+  .contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-group textarea {
+    height: 150px;
+  }
+
+  .form-group button {
+    background-color: #FF4500;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .form-group button:hover {
+    background-color: #FF6347;
+  }
+
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    font-size: 14px;
+  }
+
+  footer p {
+    margin: 0;
+  }
+
+</style>
+</head>
+<body>
+
+  
+<header>
+  <div class="logo">
+    <a href="intership.html">PORSCHE</a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle">&#8801; Menu</button>
+  <div class="menu-overlay" id="menu-overlay">
+    <ol class="menu" id="menu">
+      <li><a href="Models.html">Models</a></li>
+      <li><a href="Online bill payment.html">Online Bill Payment</a></li>
+      <li><a href="Why Us.html">Why Us</a></li>
+      <li><a href="Delivery Program.html">Delivery Programs</a></li>
+      <li><a href="Conctact & Support.html">Contact & Support</a></li>
+    </ol>
+    <span class="close-button" id="close-button">×</span>
+  </div>
+</header>
+<main>
+  <div class="contact-section">
+    <h2>Contact Us</h2>
+    <form class="contact-form" action="#" method="post" onsubmit="displayAlert(); return false;">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2024 Car Website. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+</footer>
+
+<script>
+  function displayAlert() {
+    alert('Your message has been sent successfully!');
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var menuToggle = document.getElementById("menu-toggle");
+    var menuOverlay = document.getElementById("menu-overlay");
+    var closeButton = document.getElementById("close-button");
+
+    menuToggle.addEventListener("click", function () {
+      menuOverlay.style.display = "block";
+    });
+
+    closeButton.addEventListener("click", function () {
+      menuOverlay.style.display = "none";
+    });
+  });
+</script>
+</body>
+</html>
+
+

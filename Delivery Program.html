@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porsche Car Delivery Program</title>
+<style>
+  body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+
+  .header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .programs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .program {
+    width: calc(33.33% - 20px);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .program:hover {
+    transform: translateY(-5px);
+  }
+
+  .program img {
+    width: 100%;
+    height: auto;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .program-content {
+    padding: 20px;
+    background-color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .program-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+  }
+
+  .program-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    text-align: center;
+  }
+
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .menu-toggle {
+    color: #000000;
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 998;
+  }
+
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 50px auto;
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .menu li {
+    margin-bottom: 20px;
+  }
+
+  .menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  .menu li a:hover {
+    color: #FF4500;
+  }
+  .close-button {
+    position;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-top: 20px; 
+}
+
+  main {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .bill-payment-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+  }
+
+  .bill-payment-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .payment-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left; 
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .form-group button {
+    background-color: #FF4500;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .form-group button:hover {
+    background-color: #FF6347;
+  }
+
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
+    font-size: 14px;
+  }
+
+  footer p {
+    margin: 0;
+  }
+
+</style>
+</head>
+<body>
+
+  <button class="menu-toggle" id="menu-toggle">&#8801; Menu</button>
+  <div class="menu-overlay" id="menu-overlay">
+      <ol class="menu">
+          <li><a href="Models.html">Models</a></li>
+          <li><a href="Online bill payment.html">Online Bill Payment</a></li>
+          <li><a href="Why Us.html">Why Us</a></li>
+          <li><a href="Delivery Program.html">Delivery Programs</a></li>
+          <li><a href="Conctact & Support.html">Contact & Support</a> <hr>
+            <span id="close-button" class="close-button">×</span></li>
+      </ol>
+
+  </div>
+  
+<div class="container">
+  <div class="header">
+    <h1>Porsche Car Delivery Program</h1>
+  </div>
+  
+  <div class="description">
+    <p>Experience unparalleled luxury with our exclusive Porsche Car Delivery Program. From personalized delivery to VIP lounge pickup, we ensure every moment is extraordinary.</p>
+  </div>
+  <div class="programs">
+    <div class="program">
+      <img src="/Users/user/Desktop/IMG_5011.JPG" alt="Personalized Delivery">
+      <div class="program-content">
+        <div class="program-title">Personalized Delivery</div>
+        <div class="program-description">Your Porsche delivered to your doorstep by our expert team, ensuring a seamless and personalized experience.</div>
+      </div>
+    </div>
+    <div class="program">
+      <img src="/Users/user/Desktop/IMG_5009.JPG" alt="VIP Lounge Pickup">
+      <div class="program-content">
+        <div class="program-title">VIP Lounge Pickup</div>
+        <div class="program-description">Indulge in luxury as you collect your Porsche from our exclusive VIP lounge, complete with premium amenities and hospitality.</div>
+      </div>
+    </div>
+    <div class="program">
+      <img src="/Users/user/Desktop/IMG_5008.JPG" alt="Exotic Location Delivery">
+      <div class="program-content">
+        <div class="program-title">Exotic Location Delivery</div>
+        <div class="program-description">Embark on an unforgettable journey with our exotic location delivery option, where your Porsche awaits at a destination of your choice.</div>
+      </div>
+    </div>
+    <div class="program">
+      <img src="/Users/user/Desktop/IMG_5007.JPG" alt="Porsche Experience Center Delivery Program">
+      <div class="program-content">
+        <div class="program-title">Porsche Experience Center Delivery Program</div>
+        <div class="program-description">Through the PEC Delivery Program, you and your guests will spend half a day at the Porsche Experience Center discovering the power, responsiveness and thrill at the core of Porsche. Your PEC Delivery will serve as an all- encompassing journey and unforgettable onset to the ownership of your new Porsche vehicle.</div>
+      </div>
+    </div>
+    <div class="program">
+      <img src="/Users/user/Desktop/IMG_5013.JPG" alt="Tailored Experience">
+      <div class="program-content">
+        <div class="program-title">Tailored Experience</div>
+        <div class="program-description">Tailored to your preferences, our delivery program ensures your Porsche experience is uniquely yours, from delivery to ongoing support.</div>
+      </div>
+    </div>
+
+    <div class="program">
+      <img src="/Users/user/Desktop/IMG_5014 3.jpg" alt="Concierge Service">
+      <div class="program-content">
+        <div class="program-title">Concierge Service</div>
+        <div class="program-description">Experience luxury at every step with our concierge service, providing personalized assistance and support throughout your Porsche ownership journey.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>&copy; 2024 Porsche. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></p>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      var menuToggle = document.getElementById("menu-toggle");
+      var menuOverlay = document.getElementById("menu-overlay");
+      var closeButton = document.getElementById("close-button");
+
+      menuToggle.addEventListener("click", function () {
+          menuOverlay.style.display = "block";
+      });
+
+      closeButton.addEventListener("click", function () {
+          menuOverlay.style.display = "none";
+      });
+  });
+</script>
+</body>
+</html>
+

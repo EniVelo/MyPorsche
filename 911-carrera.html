@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porsche</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; 
+    color: #444;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+  }
+
+  .header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  h1 {
+    font-size: 48px; 
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', serif; 
+  }
+
+  .price {
+    font-size: 36px; 
+    margin-bottom: 20px;
+    color: #FF4500; 
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 20px; 
+    line-height: 1.6; 
+    margin-bottom: 20px;
+    padding: 0 40px; 
+    text-align: justify; 
+  }
+
+  .photos {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .photo {
+    width: 50%; 
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .photo:hover {
+    transform: scale(1.05);
+  }
+
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 40px; 
+  }
+
+  footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  footer a:hover {
+    color: #FF4500; 
+  }
+
+  
+  .video-container {
+    margin-bottom: 60px; /* Added margin for spacing */
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .video-container video {
+    width: 100%; 
+    display: block;
+   
+  }
+
+ 
+  .video-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+    max-width: 500px;
+    visibility: hidden;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: visibility 0.3s ease;
+  }
+
+ 
+  .video-container:hover .video-text {
+    visibility: visible;
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>911-carrera</h1>
+    <div class="price"> From $114,400</div>
+  </div>
+  <div class="photos">
+    <img class="photo" src="/Users/user/Desktop/911-carrera-cabriolet@2x.webp" alt="911-carrera">
+  </div>
+  <div class="description">
+    <p>When contact with the road is even more important. When every pound less means more agility. That's when sportsmanship takes over. The 911 Carrera T is a commitment to purism. A conscious release. For increased driving pleasure.
+    </p>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br> 
+<div class="container">
+  <div class="video-container">
+    <video id="video1" controls loop>
+      <source src="/Users/user/Desktop/RPReplay_Final1710870755.mov" type="video/mp4">
+    </video>
+    <div class="video-text">
+        Timeless design, contemporary interpretation.
+        The shape of the 911 Carrera is unmistakable because of its iconic flyline and elegant roof lines. These have characterized Porsche since 1963, as have sports cars with astonishing performance.
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="video-container">
+      <video id="video2" controls loop>
+        <source src="/Users/user/Desktop/RPReplay_Final1711054480.mov" type="video/mp4">
+      </video>
+      <div class="video-text">
+        Sports car performance.
+Powerful twin-turbo six-cylinder horizontally opposed engine in the rear
+High-precision Porsche Doppelkupplung (PDK) transmission
+Systems for dynamics
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="video-container">
+      <video id="video3" controls loop>
+        <source src="/Users/user/Desktop/RPReplay_Final1711054753.mov" type="video/mp4">
+      </video>
+      <div class="video-text">
+        Sporty, ergonomic, timeless: the cockpit with GT sports steering wheel, instrument cluster, and sports seats plus.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTextVisibility(videoId) {
+      var video = document.getElementById(videoId);
+      var videoText = document.getElementById(videoId.replace("video", "videoText"));
+  
+      if (video.paused) {
+        videoText.style.visibility = "hidden";
+      } else {
+        videoText.style.visibility = "visible";
+      }
+    }
+  </script>
+<footer>
+  <p>&copy; 2024 Porsche. All rights reserved. | <a href="#" style="font-weight:bold;">Privacy Policy</a> | <a href="#" style="font-weight:bold;">Terms of Use</a></p>
+</footer>
+</body>
+</html>

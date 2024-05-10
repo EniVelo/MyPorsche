@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Porsche</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; 
+    color: #444;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+  }
+
+  .header {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  h1 {
+    font-size: 48px; 
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', serif; 
+  }
+
+  .price {
+    font-size: 36px; 
+    margin-bottom: 20px;
+    color: #FF4500; 
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 20px; 
+    line-height: 1.6; 
+    margin-bottom: 20px;
+    padding: 0 40px; 
+    text-align: justify; 
+  }
+
+  .photos {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .photo {
+    width: 50%; 
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .photo:hover {
+    transform: scale(1.05);
+  }
+
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 40px; 
+  }
+
+  footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+
+  footer a:hover {
+    color: #FF4500; 
+  }
+
+  
+  .video-container {
+    margin-bottom: 60px; 
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .video-container video {
+    width: 100%; 
+    display: block;
+   
+  }
+
+  
+  .video-text {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+    max-width: 500px;
+    visibility: hidden;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: visibility 0.3s ease;
+  }
+
+  
+  .video-container:hover .video-text {
+    visibility: visible;
+  }
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Panamera</h1>
+    <div class="price"> From $99,900</div>
+  </div>
+  <div class="photos">
+    <img class="photo" src="/Users/user/Desktop/panamera@2x.webp" alt="Panamera">
+  </div>
+  <div class="description">
+    <p>The new Panamera. Choose boldly.
+        The Panamera is for those who use freedom to follow their instincts. Who express themselves in the way they travel, not just in reaching their destination. Who make decisions based on their own desires and not what others think. We built this sports car for exactly these people.
+    </p>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br> 
+<div class="container">
+  <div class="video-container">
+    <video id="video1" controls loop>
+      <source src="/Users/user/Desktop/RPReplay_Final1710870755.mov" type="video/mp4">
+    </video>
+    <div class="video-text">
+        Panamera.<br>
+        The Panamera as a sporty saloon — the outline and proportions are unmistakably Porsche. Athletic, streamlined, with clear contours and powerful proportions. The long wheelbase, shorter overhang at the front and longer overhang at the rear already lend visual dynamism. The prominent sculpting of the side profile creates the customary Porsche waistline and sense of lightness.
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="video-container">
+      <video id="video2" controls loop>
+        <source src="/Users/user/Desktop/RPReplay_Final1711054480.mov" type="video/mp4">
+      </video>
+      <div class="video-text">
+        Adaptive air suspension including PASM.<br>
+All Panamera models are equipped with the new adaptive air suspension including Porsche Active Suspension Management (PASM). The high-end Porsche Active Ride suspension is optionally available for the Panamera E-Hybrid models, which is an active suspension system on all four wheels to increase both comfort and performance. More about this can be found in the E-Performance chapter.
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="video-container">
+      <video id="video3" controls loop>
+        <source src="/Users/user/Desktop/RPReplay_Final1711054753.mov" type="video/mp4">
+      </video>
+      <div class="video-text">
+        Driving dynamics.<br>
+The Panamera models combine sporty driving dynamics and a high level of driving comfort. The perfectly coordinated combination of a high-performance drivetrain, the Porsche Doppelkupplung (PDK) and the chassis ensures impressive overall performance.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleTextVisibility(videoId) {
+      var video = document.getElementById(videoId);
+      var videoText = document.getElementById(videoId.replace("video", "videoText"));
+  
+      if (video.paused) {
+        videoText.style.visibility = "hidden";
+      } else {
+        videoText.style.visibility = "visible";
+      }
+    }
+  </script>
+<footer>
+  <p>&copy; 2024 Porsche. All rights reserved. | <a href="#" style="font-weight:bold;">Privacy Policy</a> | <a href="#" style="font-weight:bold;">Terms of Use</a></p>
+</footer>
+</body>
+</html>
